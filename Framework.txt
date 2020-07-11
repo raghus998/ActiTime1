@@ -1,0 +1,120 @@
+FrameWork : 
+Types : 
+1)KeyDriven FW 
+2)Data Driven FW
+3)Method Driven FW
+4)Hybrid FW 
+5)BDD FW(Cucumber)
+6)Robot FW
+
+Hybrid FW (Method Driven FW  + Data Driven FW)
+
+
+3 Stages for Framework : 
+1) FrameWork Design
+2) FrameWork Implementation
+3) FrameWork  Execution
+
+
+1)FrameWork Design
+Here we have to list the all the requried softwares : like JDk,Ecplise,Browser,TestNG,Jars files
+Also Files like : Test Data File,Driver EXE files
+Here AA will Write reuseabilty Codes
+We have creat Project Strcture in such way that it should standard and understandle to everyone
+Here will create 3 Package
+1)genaric : it conatians genaric codes : under src/main/java
+2)pages : it conatins all POM classes : under src/main/java
+3)test : it contains all Test Classes : under src/test/java : eligible to run
+
+to open browser : 3 lines
+to close browseer : 1 line
+to take screenshot : 5 lines 
+3+1+5 = 9 lines 
+100 Test Class : 900 lines 
+
+FrameWork Design
+1.List all required software,Files,
+2.Create Maven Project
+3.Create the all packages in project(genaric,pages,test)
+4.Create required folders(Screenshots,Drivers,Data)
+Screenshots : to store screenshots of webpage
+Drivers : to store the .exe files
+Data : to store the Test Data
+5.Add the dependecies in maven Project(https://mvnrepository.com/) 
+selenium dependecies ,TestNG dependecies ,POI dependecies ,Commons IO dependecies 
+After run the POM.xml file > Mvn test(BUILD SUCCESS)
+6.Add the .exe files to Drivers floder.Test Data excel sheet to Data folder
+7.Add the TestNG as libary to project 
+
+
+genaric package : 
+Key and value of .exe file these values we need in each and very time to open browser and 
+To read the test data we need file path 
+These values constanst values
+constanst  : should not change or final value
+Acc to java Interface is suitable place to store final values
+
+1)Autoconstanct(I): Key and values of browser and File Path
+2) BaseTest(AC) : contains 2 methods
+ 	1)precondition() : it will open browser and enter the URL
+	2)postcondition() : it take the screenshot failed script and stores in scrennshot folder and closes the browser
+3)GenericUtils(C) : it contains generic methods of selenium : like Select(C),Actions(C),to handle popups,frames,to take  the screenshots etc
+4)ExcelData(C) : it contains generic methods to read Test Data
+	1)getData() : to read the data form Excel sheet
+	2)getLastRowNumber() : to get last row number of Sheet
+	3)getLastCellNum() : to get the last cell of row
+5)BasePage(C) : it conatins commons methods for verification
+
+
+2) FrameWork Implementation 
+
+To create POM class : under pages package
+1)The Name of POM class should be Same as Title of WebPage and It should end with word Test
+2)No of POM classes in a Framework equal to NO of WebPages in Application
+3)The method name : Action Name (enterUserName)
+4)Only Action should be performed (No Verifications)
+5)All POM classes should extend the BasePage
+
+
+To create Test class : under test Package
+1)The name of Test Class should Same as Test Case ID or Name and should should end with word Test
+2)No of Test Classes should be equal to no of Manual Test Cases
+3)It should conatin atleast 1 @Test method 
+4)Here we have to do verification 
+5)verification is done by TestNG Assert Class
+6) All test data should read from external resources
+7) All test Classes should extens the Base Test
+
+@BeforeMethod : To open browser and Enter URL 
+@Test : Test Steps
+@AfterMethod : To take screenshot of Failed Script and to close browser
+8) Create POM class Object And call the Methods 
+
+
+jaiswal04.deep@gmail.com
+djira4486@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
